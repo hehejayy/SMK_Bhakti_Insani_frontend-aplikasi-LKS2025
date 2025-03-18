@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+
+<body>
+    <section class="sector">
+        <div class="container">
+            <div class="main-heading">
+                <p>Register</p>
+            </div>
+            <a href="#">
+            <form action="#" method="post">
+                <div class="email-box">
+                    <p>Name</p>
+                    <input type="name" placeholder="E.g. John Doe">
+                </div>
+                <div class="email-box">
+                    <p>Email</p>
+                    <input type="email" placeholder="E.g. buildfast@mail.com">
+                </div>
+                <div class="pass-box">
+                    <p>Password</p>
+                    <input type="password" placeholder="Create your password">
+                </div>
+                <button class="right-login">
+                    <p class="right-login-text">Register</p>
+                </button>
+            </form>
+            <div class="right-register">
+                <p>Already have an account? <a href="#" class="register">Sign In <img
+                            src="https://ik.imagekit.io/c8xfvkbcd/designs/SignIn/Login_Page_1/Arrow.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1676391724634"
+                            alt="" class="register-arrow">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script>
+    function register(register) {
+        fetch("http://localhost\LKS\SMK_Bhakti_Insani-backend_services-aplikasi-LKS2025/api/users.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({})
+        })
+        .then(res => res.json())
+        .then(response => {
+            alert(response.success ? "Success Register!" : "Failed to register");
+            location.reload();
+        });
+    }
+</script>
+</html>
